@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>StudyFlow | Study Planner</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <h1>StudyFlow</h1>
+      <p class="intro">
+        A simple study planner for college students: track upcoming deadlines
+        and keep quick study notes in one calm, focused place.
+      </p>
+    </div>
+  </header>
+
+  <main id="main-content" class="container">
+    <section id="deadlines" class="card" aria-labelledby="deadlines-title">
+      <h2 id="deadlines-title">Deadlines</h2>
+      <p class="section-desc">Add assignments, exams, and other due dates. Items are saved in your browser.</p>
+
+      <form id="deadline-form" class="item-form" novalidate>
+        <label for="deadline-title" class="visually-hidden">Deadline title</label>
+        <input
+          id="deadline-title"
+          name="title"
+          type="text"
+          placeholder="e.g., CS219 final project"
+          autocomplete="off"
+          required
+        />
+
+        <label for="deadline-date" class="visually-hidden">Due date</label>
+        <input id="deadline-date" name="date" type="date" required />
+
+        <button type="submit" class="btn primary">Add deadline</button>
+      </form>
+
+      <ul id="deadline-list" class="item-list" aria-live="polite"></ul>
+      <p id="deadline-empty" class="empty-state">No deadlines yet. Add one above.</p>
+    </section>
+
+    <section id="notes" class="card" aria-labelledby="notes-title">
+      <h2 id="notes-title">Study Notes</h2>
+      <p class="section-desc">Capture quick thoughts, reminders, or study tips as you work.</p>
+
+      <form id="note-form" class="item-form" novalidate>
+        <label for="note-input" class="visually-hidden">Note text</label>
+        <input
+          id="note-input"
+          name="note"
+          type="text"
+          placeholder="e.g., Review chapter 4 problems"
+          autocomplete="off"
+          required
+        />
+        <button type="submit" class="btn primary">Add note</button>
+      </form>
+
+      <ul id="note-list" class="item-list note-list" aria-live="polite"></ul>
+      <p id="note-empty" class="empty-state">No notes yet. Add one above.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>StudyFlow &mdash; built for DS219 with plain HTML, CSS, and JavaScript.</p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
